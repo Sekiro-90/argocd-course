@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/lm-academy/argocd-example-apps-labs.git
+    repoURL: https://github.com/Sekiro-90/argocd-practice-apps
     targetRevision: HEAD
     path: helm-guestbook
     helm:
@@ -14,4 +14,7 @@ spec:
         - values.yaml
   destination:
     server: https://kubernetes.default.svc
-    namespace: default
+    namespace: guestbook
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
